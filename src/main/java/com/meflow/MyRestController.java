@@ -20,7 +20,12 @@ public class MyRestController {
 
     @PostMapping(value="/process")
     public void startProcessInstance() {
-        myService.startProcess();
+        myService.startProcess();//<---
+    }
+    
+    @PostMapping(value="/process/2")
+    public void startServiceTaskProcess() {
+    	myService.startServiceTaskProcess();
     }
 
     @RequestMapping(value="/tasks", method= RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)

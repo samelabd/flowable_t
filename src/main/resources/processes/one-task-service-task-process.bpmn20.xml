@@ -4,10 +4,10 @@
         xmlns:flowable="http://flowable.org/bpmn"
         targetNamespace="Examples">
 
-    <process id="oneServiceTaskProcess" name="The Service Task Process">
+    <process id="oneTaskProcess" name="The One Task Process">
         <startEvent id="theStart" />
         <sequenceFlow id="flow1" sourceRef="theStart" targetRef="theTask" />
-        <serviceTask id="theTask" name="My Java Service Task" flowable:class="com.meflow.MyDelegateOne" />
+        <userTask id="theTask" name="my task" flowable:assignee="kermit" />
         <sequenceFlow id="flow2" sourceRef="theTask" targetRef="theEnd" />
         <endEvent id="theEnd" />
     </process>

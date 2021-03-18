@@ -26,5 +26,12 @@ public class MyService {
     public List<org.flowable.task.api.Task> getTasks(String assignee) {
         return taskService.createTaskQuery().taskAssignee(assignee).list();
     }
+    
+    @Transactional
+    public void startServiceTaskProcess() {
+    	runtimeService.startProcessInstanceByKey("oneServiceTaskProcess");
+    }
+    
+    
 
 }
